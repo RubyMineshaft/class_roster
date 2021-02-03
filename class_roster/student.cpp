@@ -44,12 +44,12 @@ void Student::setDegreeProgram(DegreeProgram degreeProgram) { this->degreeProgra
 
 void Student::print() {
     cout << this->getStudentID() << '\t';
-    cout << this->getFirstName() << '\t';
-    cout << this->getLastName() << '\t';
-    cout << this->getEmailAddress() << '\t';
-    cout << this->getAge() << '\t';
-    cout << this->getDays()[0] << ", ";
+    cout << "First Name: " << this->getFirstName() << '\t';
+    cout << "Last Name: " << this->getLastName() << '\t';
+    cout << "Email: " << this->getEmailAddress() << '\t';
+    cout << "Age: " << this->getAge() << '\t';
+    cout << "daysInCourse: {" << this->getDays()[0] << ", ";
     cout << this->getDays()[1] << ", ";
-    cout << this->getDays()[2] << '\t';
-    cout << degreeProgramStrings[this->getDegreeProgram()] << '\n';
+    cout << this->getDays()[2] << "} \t";
+    cout << "Degree Program: " << degreeProgramStrings[this->getDegreeProgram()] << '\n';
 }
