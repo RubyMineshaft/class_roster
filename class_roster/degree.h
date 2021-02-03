@@ -5,6 +5,6 @@
 
 enum DegreeProgram { SECURITY, NETWORK, SOFTWARE };
 
-static const std::string degreeProgramStrings[] = { "SECURITY", "NETWORK", "SOFTWARE" };
+static const std::string degreeProgramStrings[] = { "Security", "Network", "Software" };
 
 #endif /* degree_h */
