@@ -10,15 +10,15 @@ Student::Student() {
     this->degreeProgram = DegreeProgram::SOFTWARE;
 }
 
-Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
+Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int days[], DegreeProgram degreeProgram) {
     this->studentID = studentID;
     this->firstName = firstName;
     this->lastName = lastName;
     this->emailAddress = emailAddress;
     this->age = age;
-    this->days[0] = daysInCourse1;
-    this->days[1] = daysInCourse2;
-    this->days[2] = daysInCourse3;
+    for (int i = 0; i < 3; i++) {
+        this->days[i] = days[i];
+    }
     this->degreeProgram = degreeProgram;
 }
 
