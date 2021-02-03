@@ -65,10 +65,9 @@ void Roster::remove(string studentID) {
         }
     }
     if (removed) {
-        cout << studentID << "has been successfully removed from the roster. \n\n";
-        this->printAll();
+        cout << studentID << " has been successfully removed from the roster. \n\n";
     } else {
-        cout << "No student found with ID " << studentID << "\n\n";
+        cout << "No student found with ID " << studentID << ".\n\n";
     }
 }
 
@@ -77,12 +76,13 @@ void Roster::printAll() {
 }
 
 void Roster::printAverageDaysInCourse(string studentID) {
-    for (int i = 0; i <= Roster::lastIndex; i++) {
-        cout << classRosterArray[i]->getStudentID() << ": ";
-        cout << (classRosterArray[i]->getDays()[0] + classRosterArray[i]->getDays()[1] + classRosterArray[i]->getDays()[2]) / 3.0;
-        cout << '\n';
+    for (int i = 0; i < 5; i++) {
+        if (Roster::classRosterArray[i]->getStudentID() == studentID) {
+            cout << studentID << ": ";
+            cout << (classRosterArray[i]->getDays()[0] + classRosterArray[i]->getDays()[1] + classRosterArray[i]->getDays()[2]) / 3.0;
+            cout << "\n";
+        }
     }
-    cout << '\n';
 }
 
 void Roster::printInvalidEmails() {
@@ -90,7 +90,7 @@ void Roster::printInvalidEmails() {
     
     for (int i = 0; i <= Roster::lastIndex; i++) {
         string email = Roster::classRosterArray[i]->getEmailAddress();
-        if (email.find("@") == string::npos || email.find(".") == string::npos || email.find(" ")) {
+        if (email.find("@") == string::npos || email.find(".") == string::npos || email.find(" ") != string::npos) {
             any = true;
             cout << email << "\n";
         }
@@ -111,4 +111,5 @@ Roster::~Roster() {
         delete classRosterArray[i];
         classRosterArray[i] = nullptr;
     }
+    cout << "Class Roster has been destroyed.\n";
 }
